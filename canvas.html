@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <script>
+        var tahvel = document.getElementById("canvas");
+        var ctx = tahvel.getContext("2d");
+        
+        // Joonistamise meetodid
+        
+        // Kustutamine
+        ctx.clearRect(0,0,tahvel.width,tahvel.height);
+        
+        // täidetud ristkülik
+        ctx.fillRect(0,0,100,200);
+
+        // Joon
+        ctx.beginPath();
+        ctx.moveTo(200, 0);
+        ctx.lineTo(200,200);
+        ctx.lineTo(300,200);
+        ctx.lineTo(200,0);
+        ctx.stroke();
+
+        // Kaar
+        ctx.beginPath();
+        ctx.arc(400,300,100,0,2 * Math.PI);
+        ctx.lineWidth = 3; // joone(stroke) paksus
+        
+        ctx.fillStyle = "#ff0000"; // täitevärv
+        ctx.fill(); // kujundi täitmine
+        ctx.stroke(); // kujundi piirjooned
+
+        // Tekst
+        ctx.font = "24px sans-serif";
+        ctx.fillStyle = "#000000";
+        ctx.fillText("Tere", 400,300);
+
+        
+
+    </script>
+</body>
+</html>

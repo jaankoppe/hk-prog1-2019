@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="pealkiri"></h1>
+    <script>
+        // window, document, console
+
+        console.log("Tere");
+        console.log(window);
+        //window.alert("Tere");
+
+        document.write("Tere");
+
+        var pealkiri = document.getElementById("pealkiri");
+        pealkiri.innerHTML = "See pealkiri on lisatud koodi kaudu.";
+        pealkiri.innerHTML += " Lisame teksti juurde.";
+        pealkiri.innerHTML = pealkiri.innerHTML + " Lisame teksti juurde";
+
+        var nimi = prompt("Sisesta nimi: ");
+        document.write("<p>Tere " + nimi + "</p>");
+        pealkiri.innerHTML = "Tere " + nimi;
+    </script>
+    <script src="numbrid.js"></script>
+</body>
+
+</html>

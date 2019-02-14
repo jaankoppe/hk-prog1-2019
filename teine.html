@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array, Object, Function</title>
+</head>
+<body>
+    <script>
+        // Array, massiivi deklareerimine
+        var massiiv = new Array();
+        var massiiv2 = [];
+
+        var nimed = ["Juku", "Kalle", "jüri"];
+        
+        
+        // If-lause
+        if(nimed.length < 3) {
+            // lisame massiivi nimed, ühe nime juurde
+            nimed.push("Mari");
+        }
+
+        // for-tsükkel
+        for(var i = 0; i < nimed.length; i++) {
+            console.log(i);
+            console.log( nimed[i] );
+        }
+
+        for(var i = 0; i < nimed.length; i++) {
+            var nimi = nimed[i];
+            // Muudame massiivis kõik nimed nii, et nimi algaks suure algustähega
+            nimed[i] = nimi.charAt(0).toUpperCase() + nimi.slice(1);
+        }
+
+
+        // Object
+        var objekt = new Object();
+        var objekt2 = {};
+        
+        var inimene = {
+            nimi: "Juku",
+            vanus: 5,
+            tutvusta: function() {
+                var lause = "Tere, minu nimi on " + this.nimi + " ja ma olen " + this.vanus + "-aastane."
+                console.log(lause);
+                return lause;
+            }
+        }
+
+        // Function
+
+        var tutvusta = function(nimi, vanus) {
+            var lause = "Tere, minu nimi on " + nimi + " ja ma olen " + vanus + "-aastane."
+            console.log(lause);
+            return lause;
+        };
+
+        var juku_lause = tutvusta("Juku", 5);
+        console.log(juku_lause);
+    </script>
+</body>
+</html>
