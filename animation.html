@@ -13,6 +13,7 @@
 </head>
 <body>
     <canvas id="canvas" width="800" height="600"></canvas>
+    <script src="class/Pall.js"></script>
     <script>
         var tahvel = document.getElementById("canvas");
         var ctx = tahvel.getContext("2d");
@@ -22,23 +23,33 @@
             y: 100,
             radius: 30,
             color: "#FF0000",
+            speed: 2,
+            update: function() {
+                if(this.x + this.radius < tahvel.width) {
+                    this.x = this.x + this.speed; // this.x++;
+                }
+            },
             draw: function() {
+                this.update();
                 ctx.beginPath();
                 ctx.fillStyle = this.color;
                 ctx.arc(this.x, this.y, this.radius, 0, 2*Math.PI);
                 ctx.fill();
             }
         }
+    
+        var pall2 = new Pall(100, 200, 30, "#0000FF");
 
         var joonista = function() {
             ctx.clearRect(0,0,tahvel.width,tahvel.height);
             pall.draw();
+            pall2.draw(ctx);
         }
 
         //requestAnimationFrame
         var uuenda = function(d) {
-            console.log(d);
-
+            // console.log(d);
+            
             joonista();
             requestAnimationFrame(uuenda);
         }
