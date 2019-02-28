@@ -29,11 +29,11 @@
                 ctx.fill();
             }
         }
-        // interval
-        
-        // setInterval(function() {
-        //     console.log("interval");
-        // }, 1000);
+
+        var joonista = function() {
+            ctx.clearRect(0,0,tahvel.width,tahvel.height);
+            pall.draw();
+        }
 
         //requestAnimationFrame
         var uuenda = function(d) {
@@ -44,10 +44,7 @@
         }
         uuenda(0);
 
-        var joonista = function() {
-            ctx.clearRect(0,0,tahvel.width,tahvel.height);
-            pall.draw();
-        }
+        
     </script>
 </body>
 </html>
