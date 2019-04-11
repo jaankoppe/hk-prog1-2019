@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,46 +13,70 @@
     </style>
     <script src="class/Pall.js"></script>
 </head>
+
 <body>
     <canvas id="canvas" width="800" height="600"></canvas>
     <script>
         var tahvel = document.getElementById("canvas");
         var ctx = tahvel.getContext("2d");
-        
+
         var tahvel_asukoht = tahvel.getBoundingClientRect();
         var hx, hy;
 
-        ctx.clearRect(0,0,tahvel.width,tahvel.height);
-        
+        ctx.clearRect(0, 0, tahvel.width, tahvel.height);
+
         var pall = new Pall(100, 200, 30, "#0000FF");
-        pall.update = function() {
-            if(this.hover) {
+        pall.update = function () {
+            if (this.hover) {
                 this.color = "#FF0000";
-            }else{
+            } else {
                 this.color = "#0000FF";
             }
         }
         pall.draw(ctx);
+        
+        window.addEventListener("mousedown", function (e) {
+            hx = e.clientX - tahvel_asukoht.x;
+            hy = e.clientY - tahvel_asukoht.y;
+            
+            if (pall.hover) {
+                pall.dragging = true;
+                pall.gapX = pall.x - hx;
+                pall.gapY = pall.y - hy;
+            }
+        });
 
-        window.addEventListener("mousemove", function(e) {
+        window.addEventListener("mouseup", function (e) {
+            hx = e.clientX - tahvel_asukoht.x;
+            hy = e.clientY - tahvel_asukoht.y;
+
+            pall.dragging = false;
+        });
+
+        window.addEventListener("mousemove", function (e) {
             hx = e.clientX - tahvel_asukoht.x;
             hy = e.clientY - tahvel_asukoht.y;
 
             var kaugusx = pall.x - hx;
             var kaugusy = pall.y - hy;
-            var kaugus = Math.sqrt(kaugusx*kaugusx + kaugusy*kaugusy);
+            var kaugus = Math.sqrt(kaugusx * kaugusx + kaugusy * kaugusy);
             //console.log(kaugus);
 
-            if(kaugus <= pall.radius) {
+            if (kaugus <= pall.radius) {
                 //console.log("hiir on palli peal");
                 pall.hover = true;
-            }else{
+            } else {
                 pall.hover = false;
             }
-            ctx.clearRect(0,0,tahvel.width,tahvel.height);
+            if(pall.dragging) {
+                pall.x = hx + pall.gapX;
+                pall.y = hy + pall.gapY;
+            }
+            ctx.clearRect(0, 0, tahvel.width, tahvel.height);
             pall.draw(ctx);
         });
 
     </script>
 </body>
+
 </html>
