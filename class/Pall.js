@@ -5,6 +5,7 @@ class Pall {
         this.radius = radius;
         this.color = color;
         this.speed = speed;
+        this.hover = false;
     }
 
     update() {
