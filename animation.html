@@ -18,6 +18,7 @@
         var tahvel = document.getElementById("canvas");
         var ctx = tahvel.getContext("2d");
         
+        var pallid = [];
         var pall = {
             x: 100,
             y: 100,
@@ -39,11 +40,16 @@
         }
     
         var pall2 = new Pall(100, 200, 30, "#0000FF");
+        
+        pallid.push(pall, pall2);
 
         var joonista = function() {
             ctx.clearRect(0,0,tahvel.width,tahvel.height);
-            pall.draw();
-            pall2.draw(ctx);
+            // pall.draw();
+            // pall2.draw(ctx);
+            for(var i = 0; i < pallid.length; i++) {
+                pallid[i].draw(ctx);
+            }
         }
 
         //requestAnimationFrame
