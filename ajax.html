@@ -9,6 +9,11 @@
     .app > * {
         display: inline-block;
     }
+    #userList li:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        color: blue;
+    }
     </style>
 </head>
 <body>
@@ -20,15 +25,20 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
         // ühe kirje pärimine
-        $.ajax({
-            url: "http://5ce6849f0adb8e0014a6f0fc.mockapi.io/users/1",
-            method: "GET",
-            success: function(data) {
-                var user = $("#user");
-                user.append("<h2>" + data.name + "</h2>");
-                user.append('<img src="' + data.avatar + '">');
-            }
-        });
+
+        function getUser(id) {
+            $.ajax({
+                url: "http://5ce6849f0adb8e0014a6f0fc.mockapi.io/users/" + id,
+                method: "GET",
+                success: function(data) {
+                    var user = $("#user");
+                    user.empty();
+                    user.append("<h2>" + data.name + "</h2>");
+                    user.append('<img src="' + data.avatar + '">');
+                }
+            });
+        }
+        getUser(3);
         
         $.ajax({
             url: "http://5ce6849f0adb8e0014a6f0fc.mockapi.io/users",
@@ -37,11 +47,17 @@
                 console.log(users);
                 var list = $("#userList");
                 for(var i = 0; i < users.length; i++) {
-                    list.append('<li>' + users[i].name + '</li>');
+                    list.append('<li data-id="' + users[i].id + '">' + users[i].name + '</li>');
                 }
+                $("#userList li").on("click", function(event) {
+                    console.log(event);
+                    var userId = $(event.target).data("id");
+                    getUser(userId);
+                });
             }
         });
-
+        
+        
     </script>
 </body>
 </html>
