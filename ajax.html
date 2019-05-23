@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax - jQuery</title>
+    <style>
+    .app > * {
+        display: inline-block;
+    }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <ul id="userList"></ul>
+        <div id="user"></div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        // ühe kirje pärimine
+        $.ajax({
+            url: "http://5ce6849f0adb8e0014a6f0fc.mockapi.io/users/1",
+            method: "GET",
+            success: function(data) {
+                var user = $("#user");
+                user.append("<h2>" + data.name + "</h2>");
+                user.append('<img src="' + data.avatar + '">');
+            }
+        });
+        
+        $.ajax({
+            url: "http://5ce6849f0adb8e0014a6f0fc.mockapi.io/users",
+            method: "GET",
+            success: function(users) {
+                console.log(users);
+                var list = $("#userList");
+                for(var i = 0; i < users.length; i++) {
+                    list.append('<li>' + users[i].name + '</li>');
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
