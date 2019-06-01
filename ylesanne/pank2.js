@@ -84,7 +84,8 @@ konto1.lisa("100");
 konto1.eemalda("kümme");
 
 // kontrollin kui palju on konto saldo 5 aasta pärast arvestades iga aastast intressi (2.punkt)
-konto1.kysiSaldot(5);
+var saldoViieAastaPärast = konto1.kysiSaldot(5);
+console.log("Saldo on viie aasta pärast " + saldoViieAastaPärast);
 /*
 Antud teemad mida siin kasutatud on loengutes läbi võetud:
 

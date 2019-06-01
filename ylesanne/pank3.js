@@ -59,7 +59,7 @@ class Konto {
     saada(kontonumber, summa) {
         // kontrollin et saldo ei oleks tühi ning
         // saadetav summa ei ületa saldo suurust
-        if (summa >= this.saldo && this.saldo > 0) {
+        if (this.saldo >= summa && this.saldo > 0) {
             // kontrollin kas sellise kontonumbriga kontot on pangas
             let saaja = this.pank.otsiKonto(kontonumber);
             // kui ei ole, tagastan false
@@ -80,6 +80,10 @@ class Konto {
             }
         } else {
             console.log("Kontol pole piisavalt raha!");
+            console.log({
+                summa: summa,
+                saldo: this.saldo
+            })
             return false;
         }
     }
@@ -159,7 +163,8 @@ konto1.lisa("100");
 konto1.eemalda("kümme");
 
 // kontrollin kui palju on konto saldo 5 aasta pärast arvestades iga aastast intressi (2.punkt)
-konto1.kysiSaldot(5);
+var saldoViieAastaPärast = konto1.kysiSaldot(5);
+console.log("Saldo on viie aasta pärast " + saldoViieAastaPärast);
 
 // lisan ühe konto juurde (3.punkt)
 var konto2 = seb.looKonto();
