@@ -1,0 +1,27 @@
+See on näidisülesanne. Hinne jaguneb iga punkti täitmisel vastavalt C, B, A.
+Näidislahendused on jagatud vastavalt failidesse pank1.js, pank2.js ja pank3.js
+Juurde on lisatud kommentaarid vastavalt ülesande kirjeldusele peaaegu iga rea juures.
+Lisaks on faili lõpus toodud välja, kus loengumaterjalides neid teemasid on käsitletud.
+Sellele veel lisaks panin mõned lingid juurde, kes varem õppinud saab korrata, kes mitte saab õppima hakata.
+
+--------
+Pank
+
+* loo klass Konto, millel on omadused "kontonumber" ja "saldo".
+Lisa klassile käsklused (meetodid) saldo lisamiseks ja eemaldamiseks.
+Kontrolli, et summa lisamisel ja eemaldamisel saaks sisestada ainult positiivset Number tüüpi väärtust.
+Meetodid peavad tagastama õnnestumise korral uue kontoseisu ning ebaõnnestumise korral false ja lisaks välja logima ebaõnnestumise põhjuse.
+Lisada kontrollimiseks objekt ning näidiskäsud.
+
+* Lisa klassile Konto omadus "aastaintress" ning käsklus (meetod) konto saldo küsimiseks etteantud arvu aastate pärast, arvestades liigintressi.
+Lisada kontrollimiseks näidiskäsk.
+
+* loo klass Pank, kus hoitakse kõiki kontosid, ning mille abil saab luua uusi kontosid.
+Uue konto loomisel genereeritakse 10 kohaline kontonumber kasutades Math.random() funktsiooni.
+Lisa klassile Pank otsiKonto meetod, mille abil saab otsida pangast kontot kontonumbri alusel.
+Lisa klassile Konto meetod, mille abil saab saata teisele kontole raha,
+kusjuures meetod peab kontrollima kas antud konto on ka pangas olemas kasutades eelnevalt lisatud otsiKonto meetodit.
+Raha saab saata juhul kui saldo on suurem kui 0 ning saadetav summa on suurem kui saldo suurus.
+Õnnestunud saatmise korral tagastatakse objekt, mis sisaldab saaja ja saatja kontonumbrit ning summat.
+Ebaõnnestunud saatmise korral tagastatakse false. Lisada ja muuta kontrollimiseks käsud.
+--------
