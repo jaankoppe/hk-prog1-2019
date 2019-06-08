@@ -37,6 +37,10 @@ Joonistamisel kasutage kõiki neid meetodeid vähemalt korra: movoTo()/lineTo(),
 4. Animatsioon Canvasel
     1. requestAnimationFrame
 
+### 4. 
+
+
+
 ## Eksam
 
 * Hindeline

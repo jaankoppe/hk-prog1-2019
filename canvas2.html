@@ -21,7 +21,7 @@
         
         var ringiSlider = document.getElementById("ringiRaadius");
         // ringiSlider-ile sündmuse kuulaja lisamine
-        ringiSlider.addEventListener("change", function(e) {
+        ringiSlider.addEventListener("input", function(e) {
             console.log(e.target.value);
             pall.radius = parseInt(e.target.value);
             ctx.clearRect(0,0,tahvel.width,tahvel.height);

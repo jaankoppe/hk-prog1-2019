@@ -23,7 +23,7 @@
         var hiirAll = false;
         
         ctx.lineCap = "round";
-        ctx.lineWidth = 10; // 
+        ctx.lineWidth = 10; // joone paksus
         window.addEventListener('mousedown', function(e) {
             hx = e.clientX - tahvel_asukoht.x;
             hy = e.clientY - tahvel_asukoht.y;
@@ -59,6 +59,10 @@
         // Kustutamine
         ctx.clearRect(0,0,tahvel.width,tahvel.height);
         
+        function changeLineWidth(width) {
+            ctx.beginPath();
+            ctx.lineWidth = width;
+        }
 
     </script>
 </body>

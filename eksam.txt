@@ -1,0 +1,21 @@
+Joonistamine
+
+* loo programm, mille abil saab hiirega canvasele joonistada kasutades vabakäe meetodit(kui hiire vasakut nuppu canvase peal all hoida ning sellega liikuda, tekib canvasele hiire liikumise trajektoor; kui vasak nupp lahti lasta, lõppeb ka joonistamine canvasel).
+* Täiusta programmi nii, et kasutaja saaks valida joone paksust vahemikus 1px - 10px sammuga 1px. Kasuta selleks "range" tüüpi input elementi. Range elemendi kohta dokumentatsioon: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range
+* Lisa programmile kustutamise tööriist. Kustutamise tööriist kustutab 10x10px suuruse ala, kusjuures hiire x ja y asukoht on kustutamise ala suhtes keskel. Lisa tööriista valiku võimalus, et saaks valida joonistamise ja kustutamise vahel.
+
+--
+
+Ringi püüdmine
+
+* loo programm, kus on joonistatud ring, ning mis läheb aja möödudes järjest väiksemaks. Kontrollida, et ringi raadius ei läheks väiksemaks kui 0.
+* kui ringi läbimõõt on väiksem kui 2px, siis ringile antakse uus suvaline asukoht canvase piires ning taastatakse ringi läbimõõt. Ringi suvalise asukoha määramiseks uuri ja kasuta Math.random() meetodit: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+* Peale igat klikki ringi peal, ringi raadiuse vähenemise kiirus kasvab. Kui ringi läbimõõt on väiksem kui 2px, siis lisaks uue asukoha valimisele tekita üks ring juurde. Kui ringe rohkem kui 5, on mäng läbi.
+
+--
+
+Pood
+
+* loo klass Toode, millel on järgmised omadused: tootekood, nimi, hind, laoseis. Lisa klassile käsklus (meetod) laoseisu muutmiseks. Kontrolli, et laoseisu väärtust ei saaks muuta negatiivseks, ehk minimaalne laoseis on 0. Kontrollimiseks lisada objekt ja näidiskäsk.
+* loo klass Pood, kus hoitakse kõiki tooteid, ning mille abil saab lisada uusi tooteid poodi. Lisa klassile Pood otsiToode meetod, mille abil saab otsida poest toodet tootekoodi alusel. Toote leidmisel tagastatakse toote objekt, kui ei leita, siis tagastatakse null. Kontrollimiseks lisada objekt ning näidiskäsud.
+* lisa klassile Pood omadus "kassa" ning meetod toote müümiseks. Toote müümisel vähendatakse laoseisu ühe(1) võrra ning poe kassat suurendatakse toote hinna võrra, kusjuures meetod peab kontrollima, kas antud toote laoseis on suurem kui 0. Õnnestunud müügi korral tagastatakse objekt, mis sisaldab toote nime, müügihinda ning aega millal müük toimus. Ebaõnnestunud müügi korral tagastatakse false. Lisada näidiskäsud.
