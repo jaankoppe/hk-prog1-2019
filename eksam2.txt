@@ -1,0 +1,5 @@
+Pallide loomine ja liigutamine
+
+* loo programm, kus on joonistatud pall mida saab hiirega nö. lohistada canvase peal.
+* lisa nupp, millele vajutades tekitatakse canvasele üks pall juurde, ning millele antakse suvalised koordinaadid canvase suhtes.
+* lisa canvasele ringi kujuline auk, kuhu palle asetades, kaob pall ära. Kuva välja pallide arv.
